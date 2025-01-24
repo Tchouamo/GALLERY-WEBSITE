@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #030303; /* Light blue background */
+    }
+
+    h1,h3 {
+      text-align: center;
+      color: #f4f5f7; /* Blue accent color */
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+      padding-bottom: 200px;
+    }
+
+    .image-item {
+      width: 25%; /* Adjust width for desired number of columns */
+      margin: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative; /* Required for hover effect */
+    }
+
+    .image-item img,
+    .image-item video {
+      width: 350px;
+      height: 250px;
+      object-fit: cover; /* Optionally fit within the container */
+    }
+
+    .image-item:hover img {
+      transform: scale(1.1);
+      filter: contrast(1.1) brightness(1.1); /* Adjust contrast and brightness if needed */
+    }
+
+    .image-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease-in-out;
+      cursor: pointer; /* Indicate clickable area */
+    }
+
+    .image-item:hover .overlay {
+      opacity: 1; /* Overlay visible on hover */
+    }
+
+    .image-item .overlay .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 2em;
+      /* Replace with placeholder icons if Font Awesome is not used */
+    }
+
+    /* Added styles for captions */
+    .image-item figcaption {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      color: #fff; /* Light color for better contrast */
+      text-align: center;
+      padding: 2px;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */ /* Adjust opacity for better readability as needed */
+    }
+
+    .lightbox {
+      position: fixed; /* Ensures overlay covers the whole viewport */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+      display: none; /* Initially hidden */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 80%; /* Adjust max width as needed */
+      max-height: 80%;
+      /* Remove or adjust border as desired */
+      border: 5px solid #fff; /* Optional border for image */
+    }
+
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to My Photo Gallery!</h1>
+
+  
+    
+  <h3>ME</h3>
+  <hr>
+
+  <section class="gallery">
+
+  <figure class="image-item">
+    <img src="id.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>Just me</figcaption>
+  </figure>
+
+  <figure class="image-item">
+    <img src="3.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>I and my lil sister</figcaption>
+  </figure>
+
+  </section>
+  
+  <h3>FAMILY</h3>
+  <hr>
+
+  <section class="gallery">
+
+  <figure class="image-item">
+    <img src="mom.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>MOM</figcaption>
+  </figure>
+
+  <figure class="image-item">
+    <img src="60.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>NANKAM KEVIN</figcaption>
+  </figure>
+
+  <figure class="image-item">
+    <img src="42.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>IVAN NKAKOU</figcaption>
+  </figure>
+
+  <figure class="image-item">
+    <img src="3.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>I and my lil sister</figcaption>
+  </figure>
+
+  </section>
+
+
+    <h3>FRIENDS</h3>
+    <hr>
+
+    <section class="gallery">
+
+    <figure class="image-item">
+      <img src="friends.jpg" title="Tchouamo tyan" alt="Friends having fun at the beach">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>Relaxing and making memories with friends by the sea.</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="48.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MINERADI STEVE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="49.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>NGANDO DAVID</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="59.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>EZA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="60.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>NANKAM KEVIN</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="58.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>AGBOR</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="50.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>TALBA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="51.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>YANISS</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="52.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>NJINGA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="53.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ABO WAHID</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="62.mp4" controls></video>
+      <figcaption>MINE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="61.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ZANG VICTORIA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="55.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ABDOURAMAN SOUDAIS</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="57.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MBANG LOGAN</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="56.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>KAMTA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="14.mp4" controls></video>
+      <figcaption>Taking ICE CREAM AT DOV</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="5.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ICONIC</figcaption>
+    </figure>
+
+    <figure class="image-item">
+    <img src="43.jpg" alt="Group photo on a hike">
+    <div class="overlay">
+      <i class="icon fas fa-eye"></i>
+    </div>
+    <figcaption>IVAN NGAKOU</figcaption>
+  </figure>
+
+    <figure class="image-item">
+      <img src="34.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SCHALOM</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="35.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>NKAM TICHA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="6.mp4" controls></video>
+      <figcaption>PKF FAM suprised birthday</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="4.jpg" alt="A thrilling scene from Dragon Ball Z">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>REMA, Boosta :)</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="7.mp4" controls></video>
+      <figcaption>Yafe event</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="54.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ABO WAHID</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="63.mp4" controls></video>
+      <figcaption>ZEUS JAY</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="8.mp4" controls></video>
+      <figcaption>Ice cream with my bestie</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="44.jpg" title="Tchouamo tyan" alt="Friends having fun at the beach">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>ZAMBOU STEVE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <video src="10.mp4" controls></video>
+      <figcaption>Birthday celebration</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="26.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MY G AND HIS GIRL</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="36.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>LELE ATANGA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="37.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>BRO AMBANI</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="46.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>LYNE AUDREY</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="47.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>UNA COUNTRY PEOPLE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="38.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MARTIN CELESTIN</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="39.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>EFUNDE JOKI</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="45.jpg" title="Tchouamo tyan" alt="Friends having fun at the beach">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>COACH</figcaption>
+    </figure>
+  
+    <figure class="image-item">
+      <img src="40.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>HOB YANN</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="41.jpg">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MEE MALAIKA</figcaption>
+    </figure>
+
+    </section>
+
+
+    <h3>SCREENSHORTS / ICONIC IDOLE</h3>
+    <hr>
+
+    <section class="gallery">
+
+
+    <figure class="image-item">
+      <img src="1.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>CR9 idolo.</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="21.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>DOGGY DRIP</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="22.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MEOW MEOW NIGGA</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="23.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>RUN AWAY FROM LIFE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="24.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>CLOWN</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="25.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SHE'S HAPPY AWAY FROM ME</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="27.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>IDOLO CRISTIANO RONALDO</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="28.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SUIIIIIIIIIIII</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="29.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SUIIIIIIIIIIII</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="30.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SMILE</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="31.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>FOR YOU </figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="32.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SUIIIIIIIIIIII</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="33.jpg" alt="Group photo celebrating a special occasion">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>SPIDY</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="red.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>MONKEY. D. LUFFY</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="2.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>Cristiano Ronaldo Winning his first international trophy</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="9.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>PATRICK</figcaption>
+    </figure>
+
+    <figure class="image-item">
+      <img src="13.jpg" alt="Group photo on a hike">
+      <div class="overlay">
+        <i class="icon fas fa-eye"></i>
+      </div>
+      <figcaption>COME ON BRO YOU CAN DO IT</figcaption>
+    </figure>
+      
+
+    <div class="gallery">
+      <a target="_blank" href="music.jpg">
+        <audio controls> <source src="criminel.mp3.unknown" title="Hurricane by Kanye West" type="audio/mp3"  ></audio> 
+      </a>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="music.jpg">
+        <audio controls> <source src="GODBLESS.mp3.unknown" title="Hurricane by Kanye West" type="audio/mp3"  ></audio> 
+      </a>
+    </div>
+
+    <div class="lightbox">
+      <img src="" alt="">
+      <i class="close-button fas fa-times"></i>
+    </div>
+
+  </section>
+
+  <script>
+    const imageItems = document.querySelectorAll('.image-item:not(.private)'); // Exclude the private image
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const closeButton = lightbox.querySelector('.close-button');
+
+    imageItems.forEach(imageItem => {
+      imageItem.addEventListener('click', () => {
+        // Check if the clicked item is an image or video
+        if (imageItem.querySelector('img')) {
+          lightboxImage.src = imageItem.querySelector('img').src;
+        } else {
+          lightboxImage.src = imageItem.querySelector('video').src;
+        }
+        lightbox.style.display = 'flex'; // Display the lightbox
+
+        // Close the lightbox on clicking the close button or outside the image
+        closeButton.addEventListener('click', () => {
+          lightbox.style.display = 'none';
+          lightboxImage.src = ''; // Clear the image source
+        });
+
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) { // Close on clicking outside the image
+            lightbox.style.display = 'none';
+            lightboxImage.src = '';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
